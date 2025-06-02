@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage{ryblatex}
+
+\title{\texttt{ryblatex.sty} Documentation}
+\author{Ryan Y. Batubara}
+\date{\today}
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{\texttt{ryblatex.sty} Documentation}
+\rhead{Ryan Batubara}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{Motivation}
+
+The purpose of this package is to create a single, coherent brief notation for homework, note, and project files across Math and Computer Science.
+
+\section{Letter Commands}
+
+Doing \verb|\A...\Z| gives the MathBB font:
+\begin{center}
+    \foreach \x in {A,...,Z}{%
+        \ensuremath{\csname \x\endcsname}
+    }
+\end{center}
+Doing \verb|\cA...\cZ| gives the MathCal font:
+\begin{center}
+    \foreach \x in {A,...,Z}{%
+        \ensuremath{\csname c\x\endcsname}
+    }
+\end{center}
+Doing \verb|\fA...\fZ| gives the Mathfrak font:
+\begin{center}
+    \foreach \x in {A,...,Z}{%
+        \ensuremath{\csname f\x\endcsname}
+    }
+\end{center}
+
+The above fonts can be paired with $\in$. 
+Doing \verb|\inA...\inZ| gives \verb|\in| in MathBB font:
+\begin{center}
+    \foreach \x in {A,...,Z}{%
+        \ensuremath{\csname in\x\endcsname}
+    }
+\end{center}
+Doing \verb|\incA...\incZ| gives \verb|\in| in MathCal font:
+\begin{center}
+    \foreach \x in {A,...,Z}{%
+        \ensuremath{\csname inc\x\endcsname}
+    }
+\end{center}
+Doing \verb|\infA...\infZ| gives \verb|\in| in Mathfrak font:
+\begin{center}
+    \foreach \x in {A,...,Z}{%
+        \ensuremath{\csname inf\x\endcsname}
+    }
+\end{center}
+
+Redefining any of the letter commands will carry to the \verb|\in| commands.
+For example, running \verb|\renewcommand{\A}{A}$| makes \verb|\inA| display
+\renewcommand{\A}{A}
+\begin{center}
+    $\inA$
+\end{center}
+\renewcommand{\A}{\mathbb{A}}
+
+\section{Math Commands}
+
+Various math commands have been added. Namely:
+\begin{center}
+    \begin{tabular}{r l}
+        \verb|\emptyset| & $\emptyset$ \\
+        \verb|\oldemptyset| & $\oldemptyset$ \\
+        \verb|\Mod{p}| & $\Mod{p}$ \\
+        \verb|\divides| & $\divides$ \\
+        \verb|\notdivides| & $\notdivides$ \\
+        \verb|\u{t}| & $\u{t}$ \\
+        \verb|\o{t}| & $\o{t}$ \\
+        \verb|\smatrix{1}{2}{3}{4}| & $\smatrix{1}{2}{3}{4}$ \\
+        \verb|\mat{1}{2}{3}{4}| & $\mat{1}{2}{3}{4}$ \\
+        \verb|\svect{1}{2}| & $\svect{1}{2}$ \\
+        \verb|\vect{1}{2}| & $\vect{1}{2}$ \\
+        \verb|\Choose{1}{2}| & $\Choose{1}{2}$ \\
+        \verb|\Perm{1}{2}| & $\Perm{1}{2}$ \\
+        \verb|\Id| & $\Id$ \\
+        \verb|\Im| & $\Im$
+    \end{tabular}
+\end{center}
+
+\end{document}
